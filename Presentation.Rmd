@@ -1,0 +1,45 @@
+---
+title: "Presentation"
+author: "Inês L Breda"
+date: "8/15/2019"
+output: ioslides_presentation
+---
+
+## Introduction
+
+The shiny application is available at: <br>
+- [shiny application](https://ineslbreda.shinyapps.io/Assignment/)<br>
+- [ui.R](https://github.com/InesLBreda/DevelopingDataProducts/blob/master/ui.R)<br>
+- [server.R](https://github.com/InesLBreda/DevelopingDataProducts/blob/master/server.R)<br><br>
+
+The shiny app is organized in:<br>
+**Tab 1 - Data preview**<br>
+**Tab 2 - Discover the data**<br>
+**Tab 3 - Interactive linear model**
+
+## Tab 1 - Data preview
+
+An interactive table is available to the user by using the DT package in `sever.R`:
+```{r, eval = FALSE, message=FALSE, warning=FALSE}
+library(shiny); library(DT)
+shinyServer(function(input, output) {
+    `output$mytable = DT::renderDataTable({trees})
+```
+<div align="center">
+<img src="fig1.png" width=500 height=300>
+</div>
+
+## Tab 2 - Discover the data
+
+The user selects one of three variables.<br> An histogram is generated accordingly.<br><br>
+<div align="center">
+<img src="fig2.png" width=700 height=400>
+</div>
+
+## Tab 3 - Interactive linear model
+
+The user selects an area of data points.<br> A linear model is defined.<br> The slope and intercept are shown.<br><br>
+<div align="center">
+<img src="fig3.png" width=700 height=400>
+</div>
+
